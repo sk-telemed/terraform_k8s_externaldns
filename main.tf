@@ -57,7 +57,7 @@ resource "kubernetes_cluster_role_binding" "external-dns-binding" {
 }
 
 module "deployment" {
-  source = "git@github.com:sk-telemed/terraform_k8s_deploy.git?ref=v1.0.0"
+  source = "git::https://github.com/sk-telemed/terraform_k8s_deploy.git?ref=v1.0.0"
 
   name                  = var.name
   namespace             = var.create_namespace ? kubernetes_namespace.namespace.0.metadata.0.name : var.namespace
